@@ -20,13 +20,45 @@
         </MudItem>
     </MudGrid>
 </MudContainer>
+<br/>
+<MudGrid>
+    <MudItem xs="4">
+        <center>
+            <MudButton OnClick="OpenSocialMedia">SOCIAL MEDIA</MudButton>
+        </center>
+    </MudItem>
+    <MudItem xs="4">
+        <center>
+            <MudButton>
+                <MudLink Href="mailto:postmodernbot.info@gmail.com">EMAIL</MudLink>
+            </MudButton>
+        </center>
+    </MudItem>
+    <MudItem xs="4">
+        <center>
+            <MudButton>
+                <MudLink>NFT GALLERY</MudLink>
+            </MudButton>
+        </center>
+    </MudItem>
+</MudGrid>
+<br/>
+<br/>
 
 @code {
+
     public void OpenAbout()
     {
-        var options = new DialogOptions { NoHeader = false, MaxWidth = MaxWidth.ExtraExtraLarge, CloseButton = true};
-        // var parameters = new DialogParameters { ["Sentient"] = sentient };
+        var options = new DialogOptions {NoHeader = false, MaxWidth = MaxWidth.ExtraExtraLarge, CloseButton = true};
         var parameters = new DialogParameters();
         DialogService.Show<About>("About", parameters, options);
     }
+
+    public void OpenSocialMedia()
+    {
+        var options = new DialogOptions {NoHeader = false, MaxWidth = MaxWidth.ExtraExtraLarge, CloseButton = true};
+        var parameters = new DialogParameters();
+        DialogService.Show<SocialMedia>("Social Media", parameters, options);
+    }
+
 }
