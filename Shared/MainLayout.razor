@@ -1,0 +1,40 @@
+﻿@inherits LayoutComponentBase
+
+<MudThemeProvider Theme="PostBot"/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
+
+<MudLayout>
+    @* <MudItem Style="position:absolute; z-index:-10;" id="sketch-div"/> *@
+    <MudItem Style="background:#0000; min-height: 100vh; height: 100vh; min-width: 100vw; width: 100vw; overflow-x: hidden; overflow-y: scroll;">
+        <MudMainContent>
+            <MudContainer MaxWidth="MaxWidth.ExtraExtraLarge">
+                @Body
+            </MudContainer>
+        </MudMainContent>
+    </MudItem>
+</MudLayout>
+
+@code {
+    MudTheme PostBot = new MudTheme()
+    {
+        Palette = new Palette()
+        {
+            Background = "000f",
+            Black = "000f",
+            BackgroundGrey = "111f",
+            Surface = "111f",
+            Primary = "0f0f",
+            Secondary = "00ff",
+            TextPrimary = "ffff",
+            TextSecondary = "0f0f",
+            DrawerBackground = "111f",
+            DrawerText = "ffff"
+        },
+        LayoutProperties = new LayoutProperties()
+        {
+            AppbarHeight = "0px",
+        }
+    };
+
+}

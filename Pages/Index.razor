@@ -1,0 +1,32 @@
+﻿@page "/"
+@using PostBot.Dialog
+@inject IDialogService DialogService
+
+<PageTitle>PostBot</PageTitle>
+
+<MudContainer Style="background:#000f; height:100vh; width:100%"/>
+<br/>
+<MudContainer Style="height:50vh; width:100%">
+    <MudGrid>
+        <MudItem xs="6">
+            <center>
+                <MudButton OnClick="OpenAbout">About</MudButton>
+            </center>
+        </MudItem>
+        <MudItem xs="6">
+            <center>
+                <MudButton>Projects</MudButton>
+            </center>
+        </MudItem>
+    </MudGrid>
+</MudContainer>
+
+@code {
+    public void OpenAbout()
+    {
+        var options = new DialogOptions { NoHeader = false, MaxWidth = MaxWidth.ExtraExtraLarge, CloseButton = true};
+        // var parameters = new DialogParameters { ["Sentient"] = sentient };
+        var parameters = new DialogParameters();
+        DialogService.Show<About>("About", parameters, options);
+    }
+}
